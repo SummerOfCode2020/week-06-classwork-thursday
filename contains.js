@@ -14,8 +14,18 @@
  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
 
 */
-function contains (item, value) {
-    return ''
+function contains(obj, value) {
+    for (const key in obj) {
+        if (typeof obj[key] === 'object') {
+            return contains(obj[key], value);
+        }
+
+        if (obj[key] === value) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 const nestedObject = {
@@ -35,8 +45,8 @@ contains(nestedObject, 'foo'); // false
 
  https://developer.mozilla.org/en-US/docs/Web/API/console/assert
 */
-const result1 = contains(nestedObject, 44)
-console.assert(result1 === true, "Expected true")
+const result1 = contains(nestedObject, 44);
+console.assert(result1 === true, 'Expected true');
 
-const result2 = contains(nestedObject, 'foo')
-console.assert(result2 === false, "Expected false")
+const result2 = contains(nestedObject, 'foo');
+console.assert(result2 === false, 'Expected false');
