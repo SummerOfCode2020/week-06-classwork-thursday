@@ -15,8 +15,23 @@
 
 */
 function contains (item, value) {
-    return ''
+    for(var nestedKey in item){
+        let newItem = item[nestedKey]
+
+        if(newItem === Object(newItem)){
+            return contains(newItem, value)
+        } else {
+            if(newItem === value){
+                return true
+            }
+            
+        }
+    }
+    return false
 }
+       
+    
+
 
 const nestedObject = {
     stuff: {
@@ -27,7 +42,7 @@ const nestedObject = {
     }
 };
 
-contains(nestedObject, 'foo'); // false
+console.log(contains(nestedObject, 'foo')); // false
 /*
  Learn something new!
 
