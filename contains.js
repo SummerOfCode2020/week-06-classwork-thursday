@@ -14,8 +14,16 @@
  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
 
 */
-function contains (item, value) {
-    return ''
+function contains (nestedObject, value) {
+    let contains = false 
+
+    if (Object.values(nestedObject.contains(value))) {
+         contains = true
+    } else [
+        contains = false 
+    ]
+    
+    return contains
 }
 
 const nestedObject = {
@@ -27,7 +35,7 @@ const nestedObject = {
     }
 };
 
-contains(nestedObject, 'foo'); // false
+contains(nestedObject, 'stuff'); // false
 /*
  Learn something new!
 
