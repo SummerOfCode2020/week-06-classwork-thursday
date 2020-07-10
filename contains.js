@@ -17,7 +17,7 @@
 function contains (item, value) {
     for(var nestedKey in item){
         let newItem = item[nestedKey]
-
+        
         if(newItem === Object(newItem)){
             return contains(newItem, value)
         } else {
@@ -37,12 +37,13 @@ const nestedObject = {
     stuff: {
         moreStuff: {
             magicNumber: 44,
-            something: 'other'
+            something: 'other',
+            somethingelse: 'test'
         }
     }
 };
 
-console.log(contains(nestedObject, 'foo')); // false
+//console.log(contains(nestedObject, 'foo')); // false
 /*
  Learn something new!
 
@@ -50,7 +51,7 @@ console.log(contains(nestedObject, 'foo')); // false
 
  https://developer.mozilla.org/en-US/docs/Web/API/console/assert
 */
-const result1 = contains(nestedObject, 44)
+const result1 = contains(nestedObject, 'test')
 console.assert(result1 === true, "Expected true")
 
 const result2 = contains(nestedObject, 'foo')
