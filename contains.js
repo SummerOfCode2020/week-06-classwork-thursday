@@ -15,15 +15,11 @@
 
 */
 function contains (nestedObject, value) {
-    let contains = false 
-
-    if (Object.values(nestedObject.contains(value))) {
-         contains = true
-    } else [
-        contains = false 
-    ]
-    
-    return contains
+    for (item in nestedObject) {
+        if (typeof item == Object) {
+            Object.
+        }    
+    }
 }
 
 const nestedObject = {
