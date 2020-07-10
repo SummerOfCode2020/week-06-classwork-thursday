@@ -2,7 +2,13 @@
 Implement a some() function which takes an array of items and returns true if any item in the array is true
  */
 function some (items) {
-    return '';
+    result = false
+    items.forEach(element => {
+        if(element === true){
+            result = true
+        }
+    });
+    return result
 }
 
 
