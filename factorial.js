@@ -18,5 +18,5 @@ const result1 = factorial(5)
 
  https://developer.mozilla.org/en-US/docs/Web/API/console/assert
 */
-console.log(factorial(3))
+
  console.assert(result1 === 120, "Expected 120")
