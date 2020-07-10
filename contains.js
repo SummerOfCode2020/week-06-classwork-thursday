@@ -14,8 +14,17 @@
  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
 
 */
+//  NOT Working . . .
+// what code there is, is for debugging
 function contains (item, value) {
-    return ''
+    let tmp = []
+    for (const property in item ) {
+        console.log(`${property}: ${item[property]}`);
+        console.log(`${property}`);
+        console.log(`${item[property]}`);
+ //       console.log(typeof ${item[property]} );   // does not work
+        console.log('marker one')
+    }
 }
 
 const nestedObject = {
@@ -26,6 +35,10 @@ const nestedObject = {
         }
     }
 };
+
+const testObj = { a: 1, b: 2, c: 3 }  // my test array
+
+// contains(testObj,'123'); // my test case
 
 contains(nestedObject, 'foo'); // false
 /*
