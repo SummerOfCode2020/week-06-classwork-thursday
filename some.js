@@ -2,10 +2,15 @@
 Implement a some() function which takes an array of items and returns true if any item in the array is true
  */
 function some (items) {
-    return '';
+    let returnValue = false
+    items.forEach (function (item) {
+        if ( item ) {
+            returnValue = true
+        }
+    }
+    )
+    return returnValue;
 }
-
-
 
  const result1 = some([false, false, false, false])
 
