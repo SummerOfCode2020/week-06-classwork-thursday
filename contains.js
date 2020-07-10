@@ -15,14 +15,24 @@
 
 */
 function contains (item, value) {
-    return ''
+    if (item.hasOwnProperty(value)) {
+        result.push(item);
+    }
+    for (let i = 0; i < Object.keys(item).length; i++) {
+        if(typeof item[Object.keys(item)[i]] == value) {
+            
+        }
+
+        
+    }
 }
 
 const nestedObject = {
     stuff: {
         moreStuff: {
             magicNumber: 44,
-            something: 'other'
+            something: 'other',
+            bar: 'foo'
         }
     }
 };
