@@ -2,13 +2,23 @@
 Implement a some() function which takes an array of items and returns true if any item in the array is true
  */
 function some (items) {
-    return '';
+    let containsTrue;
+
+    items.forEach(element => {
+        if (element === true || element === 'true') {
+            containsTrue = true
+        } else if (element === false || element === 'false') {
+            containsTrue = false
+        }
+    });
+
+    return containsTrue
 }
 
 
 
- const result1 = some([false, false, false, false])
 
+ const result1 = some([false, false, false, false])
 /*
  Learn something new!
 
