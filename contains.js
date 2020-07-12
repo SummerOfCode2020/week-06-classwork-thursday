@@ -17,7 +17,7 @@
 function contains (nestedObject, value) {
     for (item in nestedObject) {
         if (typeof item == Object) {
-            Object.
+            
         }    
     }
 }
