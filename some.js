@@ -1,13 +1,21 @@
 /**
-Implement a some() function which takes an array of items and returns true if any item in the array is true
+Implement a some() function which takes an array of items and 
+returns true if any item in the array is true
  */
 function some (items) {
-    return '';
+    let containsTrue = false;
+    // [false, false, false, false]   //
+
+    items.forEach(element => {
+        if (element === true) {
+            containsTrue = true;
+        };
+    });
+
+    return containsTrue 
 }
 
 
-
- const result1 = some([false, false, false, false])
 
 /*
  Learn something new!
@@ -16,6 +24,7 @@ function some (items) {
 
  https://developer.mozilla.org/en-US/docs/Web/API/console/assert
 */
+ const result1 = some([false, false, false, false])
  console.assert(result1 === false, "Expected false")
 
  const result2 = some([false, false, false, true])

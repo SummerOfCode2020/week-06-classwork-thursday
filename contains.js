@@ -5,17 +5,31 @@
  An idea for the solution:
 
  We can use JavaScript's for...in syntax to loop through the keys in the object. 
- At each key we can check to see if the value of that key is itself an object such as the key stuff in our example, its value is an object, we can use recursion to dig deeper into these objects until we find keys whose values are not nested objects.
+ At each key we can check to see if the value of that key is itself an object 
+ such as the key stuff in our example, its value is an object, we can use 
+ recursion to dig deeper into these objects until we find keys whose values are 
+ not nested objects.
 
- When the value of the key is not an object we can check to see if it is equal to the value provided. 
- If it is we can immediately return true since we found the value. If we loop through all the keys and do not find a match we return false.
+ When the value of the key is not an object we can check to see if it is equal to 
+ the value provided. If it is we can immediately return true since we found the value. 
+ If we loop through all the keys and do not find a match we return false.
 
  MDN for...in Documentation
  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
 
 */
-function contains (item, value) {
-    return ''
+function contains (nestedObject, value) {
+    for (let object in nestedObject) {
+        if (typeof object  === object) {
+            for (property in object) {
+                if (property.contains('4')) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+    }
 }
 
 const nestedObject = {
@@ -27,7 +41,7 @@ const nestedObject = {
     }
 };
 
-contains(nestedObject, 'foo'); // false
+contains(nestedObject, 'stuff'); // false
 /*
  Learn something new!
 
